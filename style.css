@@ -6,20 +6,48 @@
 
 body{
     background-color: rgba(182, 182, 182, 0.337);
+    caret-color: transparent;
 }
 .root{
     margin: 7vh auto auto auto;
     width: 35vw;
-    height: 85vh;
+    height: auto;
     border-radius: 15px;
     padding: 3% 4%;
-    font-size: 3vw;
-    /* background-image: linear-gradient(to bottom right, rgba(0, 64, 255, 0.604)0% 10%, rgba(1, 179, 137, 0.9) 40% 70%, rgba(0, 174, 168, 0.6)); */
-    background-image: linear-gradient(to bottom right, grey 0%, rgba(180, 180, 180, 0.671) 25% 75%, grey 95% 100%);
+    font-size: 3vw; 
     border: 1px solid black;
+    background: linear-gradient(-45deg, #d5d5d5c1 0% 5%, #262626a3 10% 15%, #0099d182 , #b08c0bc7 85% 95%);
+    background-size: 400% 400%;
+    animation: move 5s infinite ease;
+}
+
+@keyframes move {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* Navbar / SearchBar */
+
+.error label{
+    margin-top: 1.5vh;
+    font-size: 60%;
+    font-weight: 300;
+    text-align: center;    
+    margin-right: 1vw;
+    display: none;
+    transition: all 300ms;
+}
+
+.error label:hover{
+    scale: 1.2;
+}
 
 #container-top{
     display: flex;
@@ -38,6 +66,7 @@ body{
     /* margin: 3% 3% 5% 5%; */
     border: 1px solid rgb(157, 157, 157);
     transition: all 300ms;
+    caret-color: auto;
 }
 
 .search-inp:hover{
@@ -54,7 +83,7 @@ body{
 .image-button{
     margin: auto 1vw auto 1vw;
     width:4.5vw;
-    height:8vh;
+    height:7vh;
     padding: 2%;
     border-radius: 50%;
     border: 1px solid rgba(142, 142, 142, 0.668);
@@ -85,61 +114,116 @@ body{
 /* Main Content */
 
 #main-container{
-    display: grid;
+    display: none; /*display: grid*/
     grid-template-rows: auto auto auto;
     justify-content: center;
 }
 
 .image-panel{
-    background-color: none;
+    background-color: transparent;
     margin-top: 2vh;
+    transition: all 300ms ease-in-out;
+    animation: hover 1500ms infinite linear ;
+}
+
+.image-panel:hover{
+    scale: .8;
+}
+
+@keyframes hover {
+    0%, 100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
 }
 
 .unit{
     background-color: none;
     margin-bottom: 1vh;
+    transition: all 300ms;
 }
+
+.unit:hover{
+    scale: 1.3;
+    color: white;
+
+}
+
 .city-name{
     background-color: none;
+    transition: all 300ms;
+}
+
+.city-name:hover{
+    scale: 1.3;
+    color: white;
 }
 
 .image-panel, .unit, .city-name{
     text-align: center;
-    color: hsl(0, 0%, 40%); 
+    color: hsl(0, 0%, 0%); 
 }
 
 /* Bottom Bar / Bottom Panel */
 
 #bottom-container{
-    display: flex;
+    display: none; /*display: flex*/
     justify-content: space-between;
     margin-top: 6vh;
     font-size: x-large;
+    cursor:pointer;
 }
 
 .speed{
     display: flex;
     flex-wrap: wrap;
-    width: 10vw;
     justify-content: center;
     align-items: center;
 }
 
 .speed .speed-1{
-    width: 30%;
+    margin-right: 5px;
+    width: 25%;
+    transition: all 200ms;
 } 
+
+.speed-1:hover{
+    scale: 1.3;
+}
+
 
 .speed-1 img{
     width: 100%;
 }
 
 .speed-2 h5{
-    margin-left: 1vw;
-    font-size: 2.3vw;
-    font-weight: 300;
+    margin-left: 15px;
+    font-size: 2vw;
+    font-weight: 1000;
+    transition: all 300ms;
+}
+
+.speed-2 h5:hover{
+    scale: 1.3;
+    color: white;
+
 }
 
 .speed-3 h5{
-    margin-left: 60px;
+    margin-top: -10px  ;
+    margin-left: 65px;
     font-size: 1.2rem;
+    transition: all 300ms;
 }
+
+.speed-3 h5:hover{
+    scale: 1.5;
+    color: white;
+
+}
+
+/* Bottom Bar */
+
+/* Styling Done */
