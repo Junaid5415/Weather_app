@@ -90,7 +90,7 @@ body{
     background-color: rgba(214, 214, 214, 0.59);
     cursor: pointer;
     transition: all 300ms;
-    background-image: url(/images/search.png);
+    background-image: url(images/search.png);
     background-size: 2vw;
     background-repeat: no-repeat;
     background-position: center;
