@@ -8,8 +8,9 @@ inp.addEventListener('click', ()=>{
 
 
 
-const apiKey = '1121641d65ed72c8fd77a291e5eb0e37'
 
+
+const apiKey = '1121641d65ed72c8fd77a291e5eb0e37'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric'
 
 const searchInput = document.querySelector('.search-inp');
@@ -56,7 +57,10 @@ async function checkWeather(city){
     }
     else if(data.weather[0].main == 'Snow'){
         imagePanel.src = 'images/snow.png';
-    } 
+    }
+    else{
+        imagePanel.src = 'images/clear.png';
+    }
 
         document.querySelector('.error label').style.display = 'none';
         document.querySelector('#main-container').style.display = 'grid';
